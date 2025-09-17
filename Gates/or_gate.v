@@ -4,7 +4,7 @@
 // Design : OR Gate
 // ----------------------
 
-module and_gate (
+module or_gate (
     input  a, b,
     output y);
     assign y = a | b;
@@ -14,10 +14,10 @@ endmodule
 // Testbench
 // ----------------------
 
-module and_tb;
+module or_tb;
     reg a, b;
     wire y;
-    and_gate uut (.a(a), .b(b), .y(y));
+    or_gate uut (.a(a), .b(b), .y(y));
 
     initial begin
       $display("a | b = y");
