@@ -4,7 +4,7 @@
 // Design : NAND Gate
 // ----------------------
 
-module and_gate (
+module nand_gate (
     input  a, b,
     output y);
   assign y = !(a & b);
@@ -17,7 +17,7 @@ endmodule
 module and_tb;
     reg a, b;
     wire y;
-    and_gate uut (.a(a), .b(b), .y(y));
+    nand_gate uut (.a(a), .b(b), .y(y));
 
     initial begin
       $display("a NAND b = y");
