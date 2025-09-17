@@ -14,7 +14,7 @@ endmodule
 // Testbench
 // ----------------------
 
-module and_tb;
+module nor_tb;
     reg a, b;
     wire y;
     nor_gate uut (.a(a), .b(b), .y(y));
