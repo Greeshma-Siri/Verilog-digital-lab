@@ -4,7 +4,7 @@
 // Design : NOT Gate
 // ----------------------
 
-module and_gate (
+module not_gate (
     input  a,
     output y);
     assign y = !a;
@@ -17,7 +17,7 @@ endmodule
 module and_tb;
     reg a;
     wire y;
-    and_gate uut (.a(a), .y(y));
+    not_gate uut (.a(a), .y(y));
 
     initial begin
       $display("!a = y");
