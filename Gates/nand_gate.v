@@ -14,7 +14,7 @@ endmodule
 // Testbench
 // ----------------------
 
-module and_tb;
+module nand_tb;
     reg a, b;
     wire y;
     nand_gate uut (.a(a), .b(b), .y(y));
