@@ -1,0 +1,38 @@
+// XOR Gate - Behavioral Modeling
+module xor_behavioral (
+    input wire a, b,
+    output reg y
+);
+    always @(*) begin
+        y = (a & ~b) | (~a & b);  // Behavioral using logic expression
+    end
+endmodule
+
+
+module xor_tb;
+    // Testbench signals
+    reg a, b;
+    wire y_behavioral;
+
+    xor_behavioral  u2 (.a(a), .b(b), .y(y_behavioral));
+
+    initial begin
+        $display("A B | Dataflow Behavioral Structural");
+        $display("-----------------------------------");
+
+        // Apply all input combinations
+        a = 0; b = 0; #10;
+        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+
+        a = 0; b = 1; #10;
+        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+
+        a = 1; b = 0; #10;
+        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+
+        a = 1; b = 1; #10;
+        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+
+        $finish; // End simulation
+    end
+endmodule
