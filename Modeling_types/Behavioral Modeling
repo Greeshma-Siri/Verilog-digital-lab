@@ -10,29 +10,28 @@ endmodule
 
 
 module xor_tb;
-    // Testbench signals
     reg a, b;
-    wire y_behavioral;
+    wire y;
 
-    xor_behavioral  u2 (.a(a), .b(b), .y(y_behavioral));
+    xor_behavioral dut (.a(a), .b(b), .y(y));
 
     initial begin
-        $display("A B | Dataflow Behavioral Structural");
-        $display("-----------------------------------");
+        $display("Testing XOR Gate");
+        $display("A B | Y");
+        $display("---------");
 
-        // Apply all input combinations
         a = 0; b = 0; #10;
-        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+        $display("%b %b | %b", a, b, y);
 
         a = 0; b = 1; #10;
-        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+        $display("%b %b | %b", a, b, y);
 
         a = 1; b = 0; #10;
-        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+        $display("%b %b | %b", a, b, y);
 
         a = 1; b = 1; #10;
-        $display("%b %b |    %b        %b         %b", a, b, y_dataflow, y_behavioral, y_structural);
+        $display("%b %b | %b", a, b, y);
 
-        $finish; // End simulation
+        $finish;
     end
 endmodule
