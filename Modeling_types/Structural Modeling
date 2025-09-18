@@ -1,0 +1,40 @@
+// XOR Gate - Structural Modeling
+module xor_structural (
+    input wire a, b,
+    output wire y
+);
+    wire nota, notb, and1_out, and2_out;
+
+    not u1(nota, a);
+    not u2(notb, b);
+    and u3(and1_out, a, notb);
+    and u4(and2_out, nota, b);
+    or  u5(y, and1_out, and2_out);
+endmodule
+
+module xor_tb;
+    reg a, b;
+    wire y;
+
+    xor_structural  dut (.a(a), .b(b), .y(y));
+
+    initial begin
+        $display("Testing XOR Gate");
+        $display("A B | Y");
+        $display("---------");
+
+        a = 0; b = 0; #10;
+        $display("%b %b | %b", a, b, y);
+
+        a = 0; b = 1; #10;
+        $display("%b %b | %b", a, b, y);
+
+        a = 1; b = 0; #10;
+        $display("%b %b | %b", a, b, y);
+
+        a = 1; b = 1; #10;
+        $display("%b %b | %b", a, b, y);
+
+        $finish;
+    end
+endmodule
