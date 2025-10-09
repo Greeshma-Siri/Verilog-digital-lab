@@ -24,3 +24,54 @@ Each gate is implemented using **dataflow modeling** with the `assign` statement
 | 0 | 1 | 0 |
 | 1 | 0 | 0 |
 | 1 | 1 | 1 |
+
+---
+
+## Example: OR Gate
+
+### Truth Table
+
+| A | B | Y |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+
+---
+
+## Example: NOT Gate
+
+### Truth Table
+
+| A | Y |
+|---|---|
+| 0 | 1 | 
+| 1 | 0 | 
+
+---
+
+## Example: NAND Gate
+
+### Truth Table
+
+| A | B | Y |
+|---|---|---|
+| 0 | 0 | 1 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+---
+
+## Example: NOR Gate
+
+### Truth Table
+
+| A | B | Y |
+|---|---|---|
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 0 |
+
