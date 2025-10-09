@@ -1,3 +1,4 @@
+//4-to-2 Priority encoder Module (priority_encoder_4to2.v)
 module priority_encoder_4to2 (
     input [3:0] in,        // 4-bit input
     output reg [1:0] out,  // 2-bit encoded output
@@ -19,7 +20,8 @@ module priority_encoder_4to2 (
     end
 
 endmodule
-module tb_priority_encoder_monitor;
+//4-to-2 Priority encoder Testbench (priority_encoder_4to2_tb.v)
+module priority_encoder_4to2_tb;
     reg [3:0] in;
     wire [1:0] out;
     wire valid;
